@@ -9,16 +9,21 @@
 
 set -e
 
+# All values come from .env via docker-compose env_file + environment overrides
 DB_HOST="${DB_HOST:-mysql}"
+DB_PORT="${DB_PORT:-3306}"
 DB_NAME="${DB_NAME:-barcode_portal}"
-DB_USER="${DB_USER:-root}"
+DB_USER="${DB_USER:-barcode_user}"
 DB_PASSWORD="${DB_PASSWORD:-}"
+APP_NAME="${APP_NAME:-Barcode Portal}"
 APP_URL="${APP_URL:-http://localhost}"
+DEBUG_MODE="${DEBUG_MODE:-false}"
 
 echo "═══════════════════════════════════════════════════════"
-echo "  Barcode Portal Backend — Starting"
-echo "  DB: ${DB_USER}@${DB_HOST}/${DB_NAME}"
-echo "  APP_URL: ${APP_URL}"
+echo "  ${APP_NAME} — Backend Starting"
+echo "  DB  : ${DB_USER}@${DB_HOST}:${DB_PORT}/${DB_NAME}"
+echo "  URL : ${APP_URL}"
+echo "  DEBUG: ${DEBUG_MODE}"
 echo "═══════════════════════════════════════════════════════"
 
 # ── Wait for MySQL ─────────────────────────────────────────

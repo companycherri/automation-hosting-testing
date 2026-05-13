@@ -1,6 +1,12 @@
 # ============================================================
 # Barcode Portal Automation System — Docker Compose
-# Usage: docker compose up -d --build
+#
+# Usage:
+#   cp .env.example .env   ← first time only
+#   nano .env              ← set your passwords + APP_URL
+#   docker compose up -d --build
+#
+# All environment variables are loaded from .env automatically.
 # ============================================================
 
 services:
@@ -10,10 +16,13 @@ services:
     image: mysql:8.0
     container_name: barcode_mysql
     restart: unless-stopped
+    env_file:
+      - .env
+    # MySQL container uses the MYSQL_* variables from .env
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE:      ${MYSQL_DATABASE}
-      MYSQL_USER:          ${MYSQL_USER}
+      MYSQL_DATABASE:      ${MYSQL_DATABASE:-barcode_portal}
+      MYSQL_USER:          ${MYSQL_USER:-barcode_user}
       MYSQL_PASSWORD:      ${MYSQL_PASSWORD}
     volumes:
       - mysql_data:/var/lib/mysql
@@ -35,12 +44,18 @@ services:
       dockerfile: backend/Dockerfile
     container_name: barcode_backend
     restart: unless-stopped
+    env_file:
+      - .env
     environment:
+      # Docker-specific overrides (service name replaces localhost)
       DB_HOST:     mysql
-      DB_NAME:     ${MYSQL_DATABASE}
-      DB_USER:     ${MYSQL_USER}
+      DB_PORT:     "3306"
+      DB_NAME:     ${MYSQL_DATABASE:-barcode_portal}
+      DB_USER:     ${MYSQL_USER:-barcode_user}
       DB_PASSWORD: ${MYSQL_PASSWORD}
-      APP_URL:     ${APP_URL:-http://localhost}
+      # Paths inside the backend container (volumes mounted here)
+      UPLOAD_PATH: /var/www/html/uploads
+      LOG_PATH:    /var/www/html/logs
     volumes:
       - uploads_data:/var/www/html/uploads
       - screenshots_data:/var/www/html/bot/screenshots
@@ -64,7 +79,10 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        REACT_APP_API_URL: /api
+        # REACT_APP_* vars are baked into the JS bundle at build time.
+        # /api is correct for Docker: nginx proxies /api → backend.
+        REACT_APP_API_URL:  ${REACT_APP_API_URL:-/api}
+        REACT_APP_APP_NAME: ${REACT_APP_APP_NAME:-Barcode Portal}
     container_name: barcode_frontend
     restart: unless-stopped
     networks:
@@ -77,11 +95,17 @@ services:
       dockerfile: Dockerfile
     container_name: barcode_bot
     restart: unless-stopped
+    env_file:
+      - .env
     environment:
-      API_BASE_URL:  http://nginx/api
-      POLL_INTERVAL: ${BOT_POLL_INTERVAL:-5}
-      HEADLESS:      "true"
-      SLOW_MO:       "0"
+      # Docker-specific overrides
+      API_BASE_URL:    http://nginx/api
+      HEADLESS:        "true"
+      SLOW_MO:         "0"
+      # Paths inside the bot container (volumes mounted here)
+      DOWNLOAD_PATH:   /app/downloads
+      SCREENSHOT_PATH: /app/screenshots
+      LOG_PATH:        /app/logs
     volumes:
       - uploads_data:/app/uploads
       - screenshots_data:/app/screenshots
@@ -108,8 +132,8 @@ services:
     container_name: barcode_nginx
     restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
+      - "${NGINX_HTTP_PORT:-80}:80"
+      - "${NGINX_HTTPS_PORT:-443}:443"
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/ssl:/etc/nginx/ssl:ro

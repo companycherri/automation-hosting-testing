@@ -28,10 +28,9 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
 import db
-from config import POLL_INTERVAL, DOWNLOAD_DIR, SCREENSHOT_DIR, HEADLESS, SLOW_MO
+from config import POLL_INTERVAL, DOWNLOAD_DIR, SCREENSHOT_DIR, HEADLESS, SLOW_MO, LOG_DIR
 
-# ── Logging ────────────────────────────────────────────────
-LOG_DIR = "logs"
+# ── Ensure runtime directories exist ───────────────────────
 Path(DOWNLOAD_DIR).mkdir(parents=True, exist_ok=True)
 Path(SCREENSHOT_DIR).mkdir(parents=True, exist_ok=True)
 Path(LOG_DIR).mkdir(parents=True, exist_ok=True)

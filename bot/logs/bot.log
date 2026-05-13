@@ -6048,3 +6048,69 @@ Call log:
 10:53:01  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 10:53:01  WARNING     ⚠  No company config found for 'Honda Logistics' — aborting
 10:53:01  INFO        ✓ bot error saved (log_id=18): company_name: No portal configuration exists for company 'Honda Logistics'. Add this company to the companies table and run update-schema.php.
+11:07:59  INFO      🤖 Universal Bot | headless=False | slow_mo=500 | poll=5s
+11:07:59  INFO         downloads  → C:\xampp\htdocs\mini-automation\bot\downloads
+11:07:59  INFO         screenshots → C:\xampp\htdocs\mini-automation\bot\screenshots
+11:07:59  INFO         Waiting for pending jobs...
+11:08:09  INFO      📥 JOB-0163 picked up [Company B]
+11:08:09  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:09  INFO      JOB-0163 | Company B | part=GER-041 | qty=75 | vendor=VND-A-001
+11:08:09  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:10  INFO        LOGIN → http://localhost/mini-automation/portals/company-b/login.php [type=simple]
+11:08:11  INFO        📸 screenshots\JOB0163_01_login_page_20260513_110811.png
+11:08:12  INFO        📸 screenshots\JOB0163_02_login_filled_20260513_110812.png
+11:08:13  INFO        ✓ LOGIN OK → http://localhost/mini-automation/portals/company-b/form.php
+11:08:13  INFO        📸 screenshots\JOB0163_03_logged_in_20260513_110813.png
+11:08:13  INFO        📸 screenshots\JOB0163_04_form_ready_20260513_110813.png
+11:08:13  INFO        Filling [part_no] type=searchable_dropdown val='GER-041'
+11:08:13  INFO        [part_no] searchable → 'GER-041'
+11:08:25  ERROR       ❌ PORTAL_FIELD_ERROR [part_no]: No matching option found in dropdown for value 'GER-041'. The portal returned no results when searching for this value.
+11:08:25  INFO        📸 screenshots\JOB0163_ERR_portal_part_no_20260513_110825.png
+11:08:25  INFO        ✓ bot error saved (log_id=19): part_no: No matching option found in dropdown for value 'GER-041'. The portal returned no results when searching for this value.
+11:08:25  ERROR       ❌ JOB-0163 FAILED — portal error on field 'part_no'
+11:08:27  INFO      📥 JOB-0176 picked up [Company B]
+11:08:27  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:27  INFO      JOB-0176 | Company B | part=GER-041 | qty=75 | vendor=VND-A-001
+11:08:27  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:27  INFO        LOGIN → http://localhost/mini-automation/portals/company-b/login.php [type=simple]
+11:08:28  INFO        📸 screenshots\JOB0176_01_login_page_20260513_110828.png
+11:08:29  INFO        📸 screenshots\JOB0176_02_login_filled_20260513_110829.png
+11:08:30  INFO        ✓ LOGIN OK → http://localhost/mini-automation/portals/company-b/form.php
+11:08:30  INFO        📸 screenshots\JOB0176_03_logged_in_20260513_110830.png
+11:08:30  INFO        📸 screenshots\JOB0176_04_form_ready_20260513_110830.png
+11:08:30  INFO        Filling [part_no] type=searchable_dropdown val='GER-041'
+11:08:30  INFO        [part_no] searchable → 'GER-041'
+11:08:42  ERROR       ❌ PORTAL_FIELD_ERROR [part_no]: No matching option found in dropdown for value 'GER-041'. The portal returned no results when searching for this value.
+11:08:42  INFO        📸 screenshots\JOB0176_ERR_portal_part_no_20260513_110842.png
+11:08:42  INFO        ✓ bot error saved (log_id=20): part_no: No matching option found in dropdown for value 'GER-041'. The portal returned no results when searching for this value.
+11:08:42  ERROR       ❌ JOB-0176 FAILED — portal error on field 'part_no'
+11:08:44  INFO      📥 JOB-0201 picked up [Toyota Industries]
+11:08:44  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:44  INFO      JOB-0201 | Toyota Industries | part=ENG-001 | qty=100 | vendor=VND-001
+11:08:44  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:44  WARNING     ⚠  No company config found for 'Toyota Industries' — aborting
+11:08:44  INFO        ✓ bot error saved (log_id=21): company_name: No portal configuration exists for company 'Toyota Industries'. Add this company to the companies table and run update-schema.php.
+11:08:46  INFO      📥 JOB-0202 picked up [Honda Logistics]
+11:08:46  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:46  INFO      JOB-0202 | Honda Logistics | part=BRK-003 | qty=200 | vendor=VND-002
+11:08:46  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:46  WARNING     ⚠  No company config found for 'Honda Logistics' — aborting
+11:08:47  INFO        ✓ bot error saved (log_id=22): company_name: No portal configuration exists for company 'Honda Logistics'. Add this company to the companies table and run update-schema.php.
+11:08:49  INFO      📥 JOB-0203 picked up [Suzuki Parts Co.]
+11:08:49  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:49  INFO      JOB-0203 | Suzuki Parts Co. | part=FUL-005 | qty=0 | vendor=VND-003
+11:08:49  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:49  WARNING     ⚠  No company config found for 'Suzuki Parts Co.' — aborting
+11:08:49  INFO        ✓ bot error saved (log_id=23): company_name: No portal configuration exists for company 'Suzuki Parts Co.'. Add this company to the companies table and run update-schema.php.
+11:08:51  INFO      📥 JOB-0204 picked up [Suzuki Parts Co.]
+11:08:51  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:51  INFO      JOB-0204 | Suzuki Parts Co. | part=OIL-008 | qty=300 | vendor=VND-004
+11:08:51  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:51  WARNING     ⚠  No company config found for 'Suzuki Parts Co.' — aborting
+11:08:51  INFO        ✓ bot error saved (log_id=24): company_name: No portal configuration exists for company 'Suzuki Parts Co.'. Add this company to the companies table and run update-schema.php.
+11:08:53  INFO      📥 JOB-0205 picked up [Honda Logistics]
+11:08:53  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:53  INFO      JOB-0205 | Honda Logistics | part=AIR-010 | qty=400 | vendor=VND-001
+11:08:53  INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11:08:53  WARNING     ⚠  No company config found for 'Honda Logistics' — aborting
+11:08:53  INFO        ✓ bot error saved (log_id=25): company_name: No portal configuration exists for company 'Honda Logistics'. Add this company to the companies table and run update-schema.php.
