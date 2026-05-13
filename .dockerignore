@@ -1,0 +1,70 @@
+# ============================================================
+# .dockerignore — exclude files from Docker build context
+# ============================================================
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Node
+node_modules
+frontend/node_modules
+npm-debug.log*
+yarn-error.log
+
+# React dev artifacts
+frontend/build
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+bot/.venv
+bot/venv
+bot/env
+bot/*.log
+bot/logs/
+bot/screenshots/
+bot/downloads/
+bot/temp/
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+
+# Env files (never build secrets into images)
+.env
+.env.*
+!.env.example
+
+# Test/sample data
+samples/
+*.test.js
+
+# XAMPP / local dev
+portals/company-a/sessions/
+portals/company-b/sessions/
+portals/company-c/sessions/
+dummy-portal/sessions/
+backend/uploads/
+backend/downloads/
+
+# Docs (not needed in image)
+*.md
+docs/

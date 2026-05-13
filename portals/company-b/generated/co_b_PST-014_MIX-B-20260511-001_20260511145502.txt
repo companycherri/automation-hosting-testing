@@ -1,0 +1,18 @@
+====================================================
+  COMPANY B — ADVANCED BARCODE SYSTEM
+====================================================
+  Portal         : Company B (OTP-Protected Portal)
+  Part Number    : PST-014
+  Quantity       : 46
+  Batch Number   : MIX-B-20260511-001
+  Vendor Code    : VND-B-004
+  Priority       : normal
+  Generated At   : 20260511145502
+  Operator       : b.operator@company.com
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: PST-014-MIX-B-20260511-001-20260511145502
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY B PORTAL
+====================================================

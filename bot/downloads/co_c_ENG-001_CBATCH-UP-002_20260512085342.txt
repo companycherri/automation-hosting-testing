@@ -1,0 +1,23 @@
+====================================================
+  COMPANY C — ADVANCED MANAGEMENT PORTAL
+====================================================
+  Portal         : Company C (Multi-Step Workflow)
+  Category       : AUTO
+  Part Name      : Engine Block
+  Part Code      : ENG-001
+  Quantity       : 80
+  Batch Number   : CBATCH-UP-002
+  Vendors        : VND-C-001
+  Delivery Date  : 2026-07-20
+  Priority       : normal
+  Notes          : 
+  Document       : 
+  Generated At   : 20260512085342
+  Operator       : admin
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: ENG-001-CBATCH-UP-002-20260512085342
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY C PORTAL
+====================================================

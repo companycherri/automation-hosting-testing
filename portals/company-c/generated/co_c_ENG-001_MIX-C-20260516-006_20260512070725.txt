@@ -1,0 +1,23 @@
+====================================================
+  COMPANY C — ADVANCED MANAGEMENT PORTAL
+====================================================
+  Portal         : Company C (Multi-Step Workflow)
+  Category       : AUTO
+  Part Name      : Engine Block
+  Part Code      : ENG-001
+  Quantity       : 100
+  Batch Number   : MIX-C-20260516-006
+  Vendors        : VND-C-005
+  Delivery Date  : 2026-05-26
+  Priority       : normal
+  Notes          : 
+  Document       : 
+  Generated At   : 20260512070725
+  Operator       : admin
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: ENG-001-MIX-C-20260516-006-20260512070725
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY C PORTAL
+====================================================

@@ -1,0 +1,23 @@
+====================================================
+  COMPANY C — ADVANCED MANAGEMENT PORTAL
+====================================================
+  Portal         : Company C (Multi-Step Workflow)
+  Category       : ELEC
+  Part Name      : Engine Control Unit
+  Part Code      : ECU-020
+  Quantity       : 60
+  Batch Number   : BC-2026-002
+  Vendors        : VND-C-003
+  Delivery Date  : 2026-07-05
+  Priority       : normal
+  Notes          : 
+  Uploaded Files : None
+  Generated At   : 20260512131705
+  Operator       : admin
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: ECU-020-BC-2026-002-20260512131705
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY C PORTAL
+====================================================

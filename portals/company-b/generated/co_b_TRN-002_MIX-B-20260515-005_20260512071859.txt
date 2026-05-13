@@ -1,0 +1,18 @@
+====================================================
+  COMPANY B — ADVANCED BARCODE SYSTEM
+====================================================
+  Portal         : Company B (OTP-Protected Portal)
+  Part Number    : TRN-002
+  Quantity       : 68
+  Batch Number   : MIX-B-20260515-005
+  Vendor Code    : VND-B-003
+  Priority       : normal
+  Generated At   : 20260512071859
+  Operator       : b.operator@company.com
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: TRN-002-MIX-B-20260515-005-20260512071859
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY B PORTAL
+====================================================

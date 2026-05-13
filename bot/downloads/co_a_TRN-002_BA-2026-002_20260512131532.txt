@@ -1,0 +1,21 @@
+====================================================
+  COMPANY A — BARCODE GENERATION SYSTEM
+====================================================
+  Portal         : Company A (Simple Portal)
+  Part Number    : TRN-002
+  Quantity       : 250
+  Batch Number   : BA-2026-002
+  Vendor Code    : VND-A-002
+  Delivery Date  : 2026-06-05
+  Priority       : normal
+  Notes          : Company A — Transmission Case urgent order
+  Uploaded Files : invoice_001.pdf
+  Generated At   : 20260512131532
+  Operator       : operator_a
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: TRN-002-BA-2026-002-20260512131532
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED SUCCESSFULLY — COMPANY A
+====================================================

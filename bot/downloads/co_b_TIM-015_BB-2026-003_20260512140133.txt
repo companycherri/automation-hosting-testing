@@ -1,0 +1,19 @@
+====================================================
+  COMPANY B — ADVANCED BARCODE SYSTEM
+====================================================
+  Portal         : Company B (OTP-Protected Portal)
+  Part Number    : TIM-015
+  Quantity       : 150
+  Batch Number   : BB-2026-003
+  Vendor Code    : VND-B-003
+  Priority       : normal
+  Uploaded Files : None
+  Generated At   : 20260512140133
+  Operator       : b.operator@company.com
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: TIM-015-BB-2026-003-20260512140133
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY B PORTAL
+====================================================

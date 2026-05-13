@@ -1,0 +1,23 @@
+====================================================
+  COMPANY C — ADVANCED MANAGEMENT PORTAL
+====================================================
+  Portal         : Company C (Multi-Step Workflow)
+  Category       : AUTO
+  Part Name      : Fuel Injector
+  Part Code      : FUL-005
+  Quantity       : 212
+  Batch Number   : MIX-C-20260519-009
+  Vendors        : VND-C-002
+  Delivery Date  : 2026-05-29
+  Priority       : normal
+  Notes          : 
+  Document       : 
+  Generated At   : 20260512072226
+  Operator       : admin
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: FUL-005-MIX-C-20260519-009-20260512072226
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY C PORTAL
+====================================================

@@ -1,0 +1,23 @@
+====================================================
+  COMPANY C — ADVANCED MANAGEMENT PORTAL
+====================================================
+  Portal         : Company C (Multi-Step Workflow)
+  Category       : ELEC
+  Part Name      : Oxygen Sensor
+  Part Code      : SEN-021
+  Quantity       : 232
+  Batch Number   : MIX-C-20260520-010
+  Vendors        : VND-C-001
+  Delivery Date  : 2026-05-30
+  Priority       : normal
+  Notes          : 
+  Document       : 
+  Generated At   : 20260512071624
+  Operator       : admin
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: SEN-021-MIX-C-20260520-010-20260512071624
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY C PORTAL
+====================================================

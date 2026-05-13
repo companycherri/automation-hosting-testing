@@ -1,0 +1,18 @@
+====================================================
+  COMPANY B — ADVANCED BARCODE SYSTEM
+====================================================
+  Portal         : Company B (OTP-Protected Portal)
+  Part Number    : BRK-003
+  Quantity       : 499
+  Batch Number   : MIX-B-20260513-003
+  Vendor Code    : VND-B-001
+  Priority       : normal
+  Generated At   : 20260511145527
+  Operator       : b.operator@company.com
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: BRK-003-MIX-B-20260513-003-20260511145527
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY B PORTAL
+====================================================

@@ -1,0 +1,6 @@
+company_name,part_no,quantity,batch_no,vendor_code,delivery_date,priority,notes,upload_file_1,upload_file_2,upload_file_3
+Company A,ENG-001,50,BATCH-ERR-001,VND-A-001,2026-05-20,normal,SHOULD FAIL - qty 50 is below minimum 100,invoice_001.pdf,,
+Company A,TRN-002,99,BATCH-ERR-002,VND-A-002,2026-05-20,normal,SHOULD FAIL - qty 99 is below minimum 100,invoice_001.pdf,,
+Company A,BRK-003,100,BATCH-ERR-003,VND-A-003,2026-05-20,normal,SHOULD PASS - qty 100 is exactly the minimum,invoice_001.pdf,,
+Company A,STR-004,150,BATCH-ERR-004,VND-A-004,2026-05-20,urgent,SHOULD PASS - qty 150 is above minimum 100,invoice_001.pdf,,
+Company A,FUL-005,10,BATCH-ERR-005,VND-A-005,2026-05-20,normal,SHOULD FAIL - qty 10 is far below minimum 100,invoice_001.pdf,,

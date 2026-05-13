@@ -1,0 +1,1 @@
+logged_in|b:1;username|s:5:"admin";last_barcode_file|s:48:"barcode_AIR-010_BATCH-2024-05_20260511093027.txt";last_barcode_data|a:6:{s:7:"part_no";s:7:"AIR-010";s:8:"quantity";i:500;s:8:"batch_no";s:13:"BATCH-2024-05";s:11:"vendor_code";s:7:"VND-005";s:9:"timestamp";s:14:"20260511093027";s:8:"filename";s:48:"barcode_AIR-010_BATCH-2024-05_20260511093027.txt";}

@@ -1,0 +1,23 @@
+====================================================
+  COMPANY C — ADVANCED MANAGEMENT PORTAL
+====================================================
+  Portal         : Company C (Multi-Step Workflow)
+  Category       : HYDR
+  Part Name      : Hydraulic Filter
+  Part Code      : FLT-033
+  Quantity       : 219
+  Batch Number   : MIX-C-20260513-003
+  Vendors        : VND-C-001
+  Delivery Date  : 2026-05-23
+  Priority       : normal
+  Notes          : 
+  Document       : 
+  Generated At   : 20260512072050
+  Operator       : admin
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: FLT-033-MIX-C-20260513-003-20260512072050
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY C PORTAL
+====================================================

@@ -1,0 +1,21 @@
+====================================================
+  COMPANY A — BARCODE GENERATION SYSTEM
+====================================================
+  Portal         : Company A (Simple Portal)
+  Part Number    : ALT-006
+  Quantity       : 75
+  Batch Number   : BATCH-UP-004
+  Vendor Code    : VND-A-001
+  Delivery Date  : 2026-06-25
+  Priority       : normal
+  Notes          : Alternator — no uploads
+  Uploaded Files : None
+  Generated At   : 20260512094039
+  Operator       : operator_a
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: ALT-006-BATCH-UP-004-20260512094039
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED SUCCESSFULLY — COMPANY A
+====================================================

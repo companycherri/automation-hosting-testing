@@ -1,0 +1,20 @@
+====================================================
+  COMPANY A — BARCODE GENERATION SYSTEM
+====================================================
+  Portal         : Company A (Simple Portal)
+  Part Number    : ENG-001
+  Quantity       : 261
+  Batch Number   : MIX-A-20260516-006
+  Vendor Code    : VND-A-001
+  Delivery Date  : 2026-05-23
+  Priority       : normal
+  Notes          : 
+  Generated At   : 20260511145412
+  Operator       : operator_a
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: ENG-001-MIX-A-20260516-006-20260511145412
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED SUCCESSFULLY — COMPANY A
+====================================================

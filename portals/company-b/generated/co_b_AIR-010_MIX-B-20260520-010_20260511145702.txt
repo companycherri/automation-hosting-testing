@@ -1,0 +1,18 @@
+====================================================
+  COMPANY B — ADVANCED BARCODE SYSTEM
+====================================================
+  Portal         : Company B (OTP-Protected Portal)
+  Part Number    : AIR-010
+  Quantity       : 335
+  Batch Number   : MIX-B-20260520-010
+  Vendor Code    : VND-B-004
+  Priority       : normal
+  Generated At   : 20260511145702
+  Operator       : b.operator@company.com
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: AIR-010-MIX-B-20260520-010-20260511145702
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY B PORTAL
+====================================================

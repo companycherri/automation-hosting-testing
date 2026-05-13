@@ -1,0 +1,20 @@
+====================================================
+  COMPANY A — BARCODE GENERATION SYSTEM
+====================================================
+  Portal         : Company A (Simple Portal)
+  Part Number    : BRK-003
+  Quantity       : 150
+  Batch Number   : BATCH-A-2024-TEST
+  Vendor Code    : VND-A-002
+  Delivery Date  : 2024-12-31
+  Priority       : urgent
+  Notes          : Automated test — normal dropdown flow
+  Generated At   : 20260511101502
+  Operator       : operator_a
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: BRK-003-BATCH-A-2024-TEST-20260511101502
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED SUCCESSFULLY — COMPANY A
+====================================================

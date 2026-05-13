@@ -1,0 +1,19 @@
+====================================================
+  COMPANY B — ADVANCED BARCODE SYSTEM
+====================================================
+  Portal         : Company B (OTP-Protected Portal)
+  Part Number    : CAM-012
+  Quantity       : 80
+  Batch Number   : BB-2026-002
+  Vendor Code    : VND-B-002
+  Priority       : normal
+  Uploaded Files : invoice_001.pdf
+  Generated At   : 20260512140121
+  Operator       : b.operator@company.com
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: CAM-012-BB-2026-002-20260512140121
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY B PORTAL
+====================================================

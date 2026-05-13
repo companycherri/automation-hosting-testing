@@ -1,0 +1,21 @@
+====================================================
+  COMPANY A — BARCODE GENERATION SYSTEM
+====================================================
+  Portal         : Company A (Simple Portal)
+  Part Number    : BRK-003
+  Quantity       : 50
+  Batch Number   : BA-2026-003
+  Vendor Code    : VND-A-003
+  Delivery Date  : 2026-06-10
+  Priority       : normal
+  Notes          : Company A — Brake Caliper with 2 docs
+  Uploaded Files : invoice_001.pdf, invoice_002.pdf
+  Generated At   : 20260512140045
+  Operator       : operator_a
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: BRK-003-BA-2026-003-20260512140045
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED SUCCESSFULLY — COMPANY A
+====================================================

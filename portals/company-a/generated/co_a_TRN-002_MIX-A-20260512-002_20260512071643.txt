@@ -1,0 +1,20 @@
+====================================================
+  COMPANY A — BARCODE GENERATION SYSTEM
+====================================================
+  Portal         : Company A (Simple Portal)
+  Part Number    : TRN-002
+  Quantity       : 53
+  Batch Number   : MIX-A-20260512-002
+  Vendor Code    : VND-A-002
+  Delivery Date  : 2026-05-19
+  Priority       : normal
+  Notes          : 
+  Generated At   : 20260512071643
+  Operator       : operator_a
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: TRN-002-MIX-A-20260512-002-20260512071643
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED SUCCESSFULLY — COMPANY A
+====================================================

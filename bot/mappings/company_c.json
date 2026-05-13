@@ -1,0 +1,130 @@
+{
+  "company": "Company C",
+  "portal_type": "multistep_react",
+  "login_url": "http://localhost/mini-automation/portals/company-c/login.php",
+  "form_url":  "http://localhost/mini-automation/portals/company-c/form.php",
+  "credentials": {
+    "username": "admin",
+    "password": "CompanyC#123"
+  },
+  "login": {
+    "type": "delayed_spinner",
+    "steps": 1,
+    "spinner_delay_ms": 2000,
+    "fields": {
+      "username": { "selector": "input[name='username']",  "type": "text",     "selector_type": "attribute" },
+      "password": { "selector": "input[name='password']",  "type": "password", "selector_type": "attribute" },
+      "submit":   { "selector": "button.login-submit",     "type": "button",   "selector_type": "class" }
+    },
+    "success_url_pattern": "**/form.php",
+    "wait_strategy": "wait_for_url_after_spinner"
+  },
+  "form": {
+    "type": "multi_step",
+    "steps": 3,
+    "success_url_pattern": "**/generate.php",
+    "step_1": {
+      "panel_selector": "[data-testid='step-1']",
+      "next_button": "[data-testid='next-step-1']",
+      "fields": {
+        "category": {
+          "type": "react_custom_dropdown",
+          "control":       "#cat-control",
+          "menu":          "#cat-menu",
+          "search_input":  "#cat-search",
+          "option":        "[data-testid='category-option']",
+          "option_attr":   "data-id",
+          "hidden_input":  "#hid-category",
+          "label": "Category",
+          "required": true,
+          "options_via": "api",
+          "api_url": "api/categories.php"
+        },
+        "part_no": {
+          "type": "ajax_dependent_select",
+          "selector":          "#sub-select",
+          "loaded_class":      "loaded",
+          "depends_on":        "category",
+          "api_url":           "api/subcategories.php?category={category}",
+          "load_delay_ms":     800,
+          "label": "Part Number",
+          "required": true
+        },
+        "batch_no": {
+          "type": "text",
+          "selector": "[data-testid='batch-input']",
+          "label": "Batch Number",
+          "required": true
+        }
+      }
+    },
+    "step_2": {
+      "panel_selector": "[data-testid='step-2']",
+      "next_button":  "[data-testid='next-step-2']",
+      "back_button":  "button.btn-secondary",
+      "fields": {
+        "quantity": {
+          "type": "number",
+          "selector": "[data-testid='quantity-input']",
+          "required": true
+        },
+        "delivery_date": {
+          "type": "date",
+          "selector": "[data-testid='delivery-date']",
+          "required": false
+        },
+        "priority": {
+          "type": "radio_pill",
+          "selector": "input[name='priority']",
+          "testid_pattern": "[data-testid='priority-{value}']",
+          "values": ["low", "normal", "high", "critical"],
+          "default": "normal",
+          "required": false
+        },
+        "notes": {
+          "type": "textarea",
+          "selector": "[data-testid='notes-textarea']",
+          "required": false
+        }
+      }
+    },
+    "step_3": {
+      "panel_selector": "[data-testid='step-3']",
+      "submit_button": "[data-testid='final-submit']",
+      "fields": {
+        "vendors": {
+          "type": "custom_multiselect",
+          "option_selector":  "[data-testid='vendor-option']",
+          "option_attr":      "data-code",
+          "hidden_input":     "#hid-vendors",
+          "tags_container":   ".ms-selected-tags",
+          "label": "Vendors",
+          "required": true,
+          "min_select": 1,
+          "options_via": "api",
+          "api_url": "api/vendors.php"
+        },
+        "document": {
+          "type": "file_upload",
+          "selector": "[data-testid='file-input']",
+          "allowed_types": [".pdf", ".xlsx", ".doc"],
+          "required": false
+        },
+        "terms": {
+          "type": "checkbox",
+          "selector": "[data-testid='terms-checkbox']",
+          "required": true,
+          "must_be_checked": true
+        }
+      }
+    }
+  },
+  "download": {
+    "button_selector": "#download-btn",
+    "timeout_ms": 25000
+  },
+  "selectors_summary": {
+    "type": "mixed_advanced",
+    "notes": "Uses data-testid, class, attribute selectors. React-style custom dropdown, AJAX dependent, multi-select"
+  }
+}

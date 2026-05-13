@@ -1,0 +1,18 @@
+====================================================
+  COMPANY B — ADVANCED BARCODE SYSTEM
+====================================================
+  Portal         : Company B (OTP-Protected Portal)
+  Part Number    : CAM-012
+  Quantity       : 449
+  Batch Number   : MIX-B-20260517-007
+  Vendor Code    : VND-B-003
+  Priority       : normal
+  Generated At   : 20260511145623
+  Operator       : b.operator@company.com
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: CAM-012-MIX-B-20260517-007-20260511145623
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY B PORTAL
+====================================================

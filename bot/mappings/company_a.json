@@ -1,0 +1,80 @@
+{
+  "company": "Company A",
+  "portal_type": "simple",
+  "login_url": "http://localhost/mini-automation/portals/company-a/login.php",
+  "form_url":  "http://localhost/mini-automation/portals/company-a/form.php",
+  "credentials": {
+    "username": "operator_a",
+    "password": "pass_a123"
+  },
+  "login": {
+    "type": "simple",
+    "steps": 1,
+    "fields": {
+      "username": { "selector": "#username",  "type": "text" },
+      "password": { "selector": "#password",  "type": "password" },
+      "submit":   { "selector": "#login-btn", "type": "button" }
+    },
+    "success_url_pattern": "**/form.php"
+  },
+  "form": {
+    "submit_selector": "#submit-btn",
+    "success_url_pattern": "**/generate.php",
+    "fields": {
+      "part_no": {
+        "type": "select",
+        "selector": "#part_no",
+        "label": "Part Number",
+        "required": true,
+        "options_via": "html_select"
+      },
+      "quantity": {
+        "type": "number",
+        "selector": "#quantity",
+        "label": "Quantity",
+        "required": true
+      },
+      "batch_no": {
+        "type": "text",
+        "selector": "#batch_no",
+        "label": "Batch Number",
+        "required": true
+      },
+      "delivery_date": {
+        "type": "date",
+        "selector": "#delivery_date",
+        "label": "Delivery Date",
+        "required": false
+      },
+      "notes": {
+        "type": "textarea",
+        "selector": "#notes",
+        "label": "Notes",
+        "required": false
+      },
+      "vendor_code": {
+        "type": "select",
+        "selector": "#vendor_code",
+        "label": "Vendor Code",
+        "required": true,
+        "options_via": "html_select"
+      },
+      "priority": {
+        "type": "radio",
+        "selector": "input[name='priority']",
+        "label": "Priority",
+        "values": ["normal", "urgent", "critical"],
+        "required": false,
+        "default": "normal"
+      }
+    }
+  },
+  "download": {
+    "button_selector": "#download-btn",
+    "timeout_ms": 25000
+  },
+  "selectors_summary": {
+    "type": "id_based",
+    "notes": "All selectors use #id format — easiest to work with"
+  }
+}

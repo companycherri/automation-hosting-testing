@@ -1,0 +1,21 @@
+====================================================
+  COMPANY A — BARCODE GENERATION SYSTEM
+====================================================
+  Portal         : Company A (Simple Portal)
+  Part Number    : AIR-010
+  Quantity       : 500
+  Batch Number   : BA-2026-004
+  Vendor Code    : VND-A-001
+  Delivery Date  : 
+  Priority       : normal
+  Notes          : Company A — Air Filter bulk no delivery date
+  Uploaded Files : None
+  Generated At   : 20260512131554
+  Operator       : operator_a
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: AIR-010-BA-2026-004-20260512131554
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED SUCCESSFULLY — COMPANY A
+====================================================

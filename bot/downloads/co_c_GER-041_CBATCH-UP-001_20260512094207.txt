@@ -1,0 +1,23 @@
+====================================================
+  COMPANY C — ADVANCED MANAGEMENT PORTAL
+====================================================
+  Portal         : Company C (Multi-Step Workflow)
+  Category       : MECH
+  Part Name      : Gear Set
+  Part Code      : GER-041
+  Quantity       : 150
+  Batch Number   : CBATCH-UP-001
+  Vendors        : VND-C-001
+  Delivery Date  : 2026-07-15
+  Priority       : normal
+  Notes          : 
+  Uploaded Files : None
+  Generated At   : 20260512094207
+  Operator       : admin
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: GER-041-CBATCH-UP-001-20260512094207
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY C PORTAL
+====================================================

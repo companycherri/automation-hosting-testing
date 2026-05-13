@@ -1,0 +1,23 @@
+====================================================
+  COMPANY C — ADVANCED MANAGEMENT PORTAL
+====================================================
+  Portal         : Company C (Multi-Step Workflow)
+  Category       : MECH
+  Part Name      : Gear Set
+  Part Code      : GER-041
+  Quantity       : 750
+  Batch Number   : BATCH-MS-2024-001
+  Vendors        : VND-C-001, VND-C-002
+  Delivery Date  : 2024-12-31
+  Priority       : high
+  Notes          : Multi-step form automation test run
+  Document       : 
+  Generated At   : 20260511100839
+  Operator       : admin
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: GER-041-BATCH-MS-2024-001-20260511100839
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY C PORTAL
+====================================================

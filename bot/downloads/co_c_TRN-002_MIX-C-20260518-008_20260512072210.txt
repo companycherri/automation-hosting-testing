@@ -1,0 +1,23 @@
+====================================================
+  COMPANY C — ADVANCED MANAGEMENT PORTAL
+====================================================
+  Portal         : Company C (Multi-Step Workflow)
+  Category       : AUTO
+  Part Name      : Transmission Case
+  Part Code      : TRN-002
+  Quantity       : 62
+  Batch Number   : MIX-C-20260518-008
+  Vendors        : VND-C-002
+  Delivery Date  : 2026-05-28
+  Priority       : normal
+  Notes          : 
+  Document       : 
+  Generated At   : 20260512072210
+  Operator       : admin
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: TRN-002-MIX-C-20260518-008-20260512072210
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY C PORTAL
+====================================================

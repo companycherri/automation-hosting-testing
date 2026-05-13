@@ -1,0 +1,23 @@
+====================================================
+  COMPANY C — ADVANCED MANAGEMENT PORTAL
+====================================================
+  Portal         : Company C (Multi-Step Workflow)
+  Category       : MECH
+  Part Name      : Bearing Assembly
+  Part Code      : BRG-040
+  Quantity       : 219
+  Batch Number   : MIX-C-20260513-003
+  Vendors        : VND-C-001
+  Delivery Date  : 2026-05-23
+  Priority       : normal
+  Notes          : 
+  Document       : 
+  Generated At   : 20260511145943
+  Operator       : admin
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: BRG-040-MIX-C-20260513-003-20260511145943
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED — COMPANY C PORTAL
+====================================================

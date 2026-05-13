@@ -1,0 +1,1 @@
+logged_in|b:1;username|s:5:"admin";last_barcode_file|s:48:"barcode_OIL-008_BATCH-2024-03_20260511093008.txt";last_barcode_data|a:6:{s:7:"part_no";s:7:"OIL-008";s:8:"quantity";i:400;s:8:"batch_no";s:13:"BATCH-2024-03";s:11:"vendor_code";s:7:"VND-003";s:9:"timestamp";s:14:"20260511093008";s:8:"filename";s:48:"barcode_OIL-008_BATCH-2024-03_20260511093008.txt";}

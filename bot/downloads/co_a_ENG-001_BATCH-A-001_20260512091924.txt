@@ -1,0 +1,20 @@
+====================================================
+  COMPANY A — BARCODE GENERATION SYSTEM
+====================================================
+  Portal         : Company A (Simple Portal)
+  Part Number    : ENG-001
+  Quantity       : 100
+  Batch Number   : BATCH-A-001
+  Vendor Code    : VND-A-001
+  Delivery Date  : 2026-05-12
+  Priority       : normal
+  Notes          : Testing file name mapping upload
+  Generated At   : 20260512091924
+  Operator       : operator_a
+----------------------------------------------------
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+  BARCODE: ENG-001-BATCH-A-001-20260512091924
+  [||| |||| || |||| ||| || ||||  ||||  ||| ||||]
+====================================================
+  STATUS: GENERATED SUCCESSFULLY — COMPANY A
+====================================================

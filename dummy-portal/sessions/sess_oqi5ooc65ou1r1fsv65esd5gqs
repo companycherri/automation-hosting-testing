@@ -1,0 +1,1 @@
+logged_in|b:1;username|s:5:"admin";last_barcode_file|s:48:"barcode_RAD-007_BATCH-2024-02_20260511092959.txt";last_barcode_data|a:6:{s:7:"part_no";s:7:"RAD-007";s:8:"quantity";i:350;s:8:"batch_no";s:13:"BATCH-2024-02";s:11:"vendor_code";s:7:"VND-002";s:9:"timestamp";s:14:"20260511092959";s:8:"filename";s:48:"barcode_RAD-007_BATCH-2024-02_20260511092959.txt";}

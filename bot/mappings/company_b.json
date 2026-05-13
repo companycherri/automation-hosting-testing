@@ -1,0 +1,102 @@
+{
+  "company": "Company B",
+  "portal_type": "advanced_otp",
+  "login_url":    "http://localhost/mini-automation/portals/company-b/login.php",
+  "otp_url":      "http://localhost/mini-automation/portals/company-b/verify-otp.php",
+  "form_url":     "http://localhost/mini-automation/portals/company-b/form.php",
+  "credentials": {
+    "email":    "b.operator@company.com",
+    "password": "Bpass@2024",
+    "otp":      "123456"
+  },
+  "login": {
+    "type": "otp_2step",
+    "steps": 2,
+    "step1": {
+      "fields": {
+        "email":    { "selector": "#email",    "type": "email" },
+        "password": { "selector": "#password", "type": "password" },
+        "submit":   { "selector": "#login-btn","type": "button" }
+      },
+      "success_url_pattern": "**/verify-otp.php"
+    },
+    "step2": {
+      "fields": {
+        "otp":    { "selector": "#otp-input",  "type": "text", "static_value": "123456" },
+        "submit": { "selector": "#verify-btn", "type": "button" }
+      },
+      "success_url_pattern": "**/form.php"
+    }
+  },
+  "form": {
+    "submit_selector": "[data-testid='submit-form']",
+    "modal": {
+      "trigger":  "[data-testid='submit-form']",
+      "overlay":  ".modal-overlay",
+      "confirm":  "[data-testid='confirm-order']",
+      "cancel":   "[data-testid='cancel-order']"
+    },
+    "success_url_pattern": "**/generate.php",
+    "fields": {
+      "part_no": {
+        "type": "searchable_dropdown",
+        "search_input":  "[data-testid='part-search-input']",
+        "option_list":   "[data-testid='part-option']",
+        "hidden_input":  "#hidden-part-no",
+        "display_input": "[data-testid='part-selected-display']",
+        "label": "Part Number",
+        "required": true,
+        "options_via": "static_js_array",
+        "search_strategy": "type_first_3_chars"
+      },
+      "quantity": {
+        "type": "number",
+        "selector": "#quantity",
+        "label": "Quantity",
+        "required": true
+      },
+      "batch_no": {
+        "type": "text",
+        "selector": "#batch_no",
+        "label": "Batch Number",
+        "required": true
+      },
+      "vendor_code": {
+        "type": "ajax_select",
+        "selector": "[data-testid='vendor-select']",
+        "loading_indicator": "#vendor-loading",
+        "loaded_class": "loaded",
+        "label": "Vendor Code",
+        "required": true,
+        "options_via": "ajax",
+        "api_url": "api/vendors.php",
+        "load_delay_ms": 1500,
+        "wait_strategy": "poll_option_count"
+      },
+      "priority": {
+        "type": "radio",
+        "selector": ".radio-opt input[type='radio']",
+        "label": "Priority",
+        "values": ["normal", "urgent", "express"],
+        "required": false,
+        "default": "normal"
+      },
+      "contact_iframe": {
+        "type": "iframe_fields",
+        "iframe_selector": "#contact-iframe",
+        "fields": {
+          "contact_name":  "[data-testid='iframe-contact-name']",
+          "contact_phone": "[data-testid='iframe-contact-phone']"
+        }
+      }
+    }
+  },
+  "download": {
+    "button_selector": "#download-btn",
+    "timeout_ms": 25000
+  },
+  "selectors_summary": {
+    "type": "mixed",
+    "notes": "Uses data-testid for main form fields, #id for login, class for modal"
+  }
+}

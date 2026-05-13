@@ -1,0 +1,11 @@
+company_name,part_no,quantity,batch_no,vendor_code,delivery_date,priority,notes
+Company A,ENG-001,100,BATCH-2026-001,VND-A-001,2026-06-01,normal,Company A — Engine Block standard batch
+Company A,TRN-002,250,BATCH-2026-002,VND-A-002,2026-06-05,urgent,Company A — Transmission Case urgent order
+Company A,BRK-003,50,BATCH-2026-003,VND-A-001,2026-06-10,normal,Company A — Brake Caliper standard batch
+Company B,CAM-012,75,B-2026-001,VND-B-001,,normal,Company B — Camshaft parts order
+Company B,ENG-001,200,B-2026-002,VND-B-002,2026-07-05,urgent,Company B — Engine Block urgent via modal portal
+Company C,GER-041,150,CBATCH-2026-001,VND-C-001,2026-07-15,normal,Company C — MECH category Gear Set
+Company C,ENG-001,80,CBATCH-2026-002,VND-C-002,2026-07-20,urgent,Company C — AUTO category Engine Block urgent
+Company C,PMP-030,45,CBATCH-2026-003,VND-C-003,2026-07-25,express,Company C — HYDR category Hydraulic Pump
+Company C,ECU-020,60,CBATCH-2026-004,VND-C-001,2026-08-01,normal,Company C — ELEC category Engine Control Unit
+Company A,AIR-010,500,BATCH-2026-010,VND-A-003,,normal,Company A — Air Filter bulk order no delivery date
