@@ -26,7 +26,7 @@ services:
       MYSQL_PASSWORD:      ${MYSQL_PASSWORD}
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./backend/database.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     networks:
       - automation-network
     healthcheck:
@@ -107,7 +107,11 @@ services:
       SCREENSHOT_PATH: /app/screenshots
       LOG_PATH:        /app/logs
     volumes:
-      - uploads_data:/app/uploads
+      # Mount uploads at the SAME path PHP uses (/var/www/html/uploads).
+      # PHP stores absolute paths like /var/www/html/uploads/batch_xxx/file.pdf
+      # in the database. The bot reads those paths directly — they must resolve
+      # to the same location inside the bot container.
+      - uploads_data:/var/www/html/uploads
       - screenshots_data:/app/screenshots
       - downloads_data:/app/downloads
       - bot_logs:/app/logs

@@ -91,8 +91,9 @@ This single command:
 2. Pulls MySQL and Nginx images
 3. Creates persistent volumes for data
 4. Starts all 5 containers
-5. Backend automatically runs schema migrations on startup
-6. Bot starts polling for jobs immediately
+5. **MySQL auto-runs `database/init.sql`** — all tables and seed data created (first boot only)
+6. Backend automatically runs schema migrations on startup
+7. Bot starts polling for jobs immediately
 
 **First build takes ~5–10 minutes** (downloads Node, PHP, Python, Chromium).
 Subsequent builds are much faster due to Docker layer caching.
@@ -262,19 +263,60 @@ docker compose logs -f python-bot
 
 ---
 
-## 🗄️ Database Migrations
+## 🗄️ Database
 
-Run schema migrations manually (also runs automatically on container start):
+### Auto-initialization (Docker)
+
+On the **first** `docker compose up -d --build`, MySQL automatically runs
+`database/init.sql` — creating all tables and seeding the default admin user
+and the three test-company configurations. **No manual SQL import needed.**
+
+```
+database/
+└── init.sql    ← single authoritative schema + seed data
+                   (tables, columns, indexes, INSERT IGNORE rows)
+```
+
+> MySQL only runs init scripts when the `mysql_data` volume is **empty** (first
+> boot). Subsequent starts use the existing persisted data.
+
+---
+
+### Reset the database (wipe all data)
+
+```bash
+# Stop all containers AND delete volumes (ALL DATA IS LOST)
+docker compose down -v
+
+# Fresh start — MySQL re-runs init.sql automatically
+docker compose up -d --build
+```
+
+> ⚠️ The `-v` flag deletes every named volume: database rows, uploaded files,
+> screenshots, downloads. Only do this in dev / test environments.
+
+---
+
+### Run schema migrations (add missing columns / tables)
+
+Migrations run automatically on every backend container start via
+`docker-entrypoint.sh → update-schema.php`.
+
+To run manually:
 ```bash
 docker exec barcode_backend php /var/www/html/update-schema.php
 ```
 
-Direct MySQL access:
+---
+
+### Direct MySQL access
+
 ```bash
 docker exec -it barcode_mysql mysql -u barcode_user -p barcode_portal
 ```
 
-Backup database:
+### Backup database
+
 ```bash
 docker exec barcode_mysql mysqldump \
   -u root -p${MYSQL_ROOT_PASSWORD} barcode_portal \
@@ -360,6 +402,8 @@ mini-automation/
 ├── .env                        # Your secrets (never commit this)
 ├── .env.example                # Template — commit this
 ├── .dockerignore
+├── database/
+│   └── init.sql                # Full schema + seed data (auto-run by MySQL on first boot)
 │
 ├── frontend/                   # React 19 + Tailwind
 │   ├── Dockerfile              # Node build → Nginx serve (multi-stage)

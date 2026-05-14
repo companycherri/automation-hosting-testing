@@ -1,16 +1,24 @@
 <?php
 // ============================================================
-// ONE-TIME DATABASE INITIALIZER
+// ONE-TIME DATABASE INITIALIZER (XAMPP / bare-metal only)
 // Visit: http://localhost/mini-automation/backend/init.php
+//
+// In Docker, the database is initialised automatically by MySQL
+// reading database/init.sql on first boot. You do NOT need to
+// run this script in Docker.
+//
+// Credentials are read from environment variables with XAMPP
+// fallbacks (root / empty password).
 // ============================================================
 
-$host   = 'localhost';
-$dbUser = 'root';
-$dbPass = '';
-$dbName = 'barcode_portal';
+$host   = getenv('DB_HOST')     ?: 'localhost';
+$dbUser = getenv('DB_USER')     ?: 'root';
+$dbPass = getenv('DB_PASSWORD') ?: '';
+$dbName = getenv('DB_NAME')     ?: 'barcode_portal';
+$dbPort = getenv('DB_PORT')     ?: '3306';
 
 try {
-    $pdo = new PDO("mysql:host={$host};charset=utf8mb4", $dbUser, $dbPass, [
+    $pdo = new PDO("mysql:host={$host};port={$dbPort};charset=utf8mb4", $dbUser, $dbPass, [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ]);

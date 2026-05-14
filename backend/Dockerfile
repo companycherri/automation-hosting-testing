@@ -65,14 +65,16 @@ WORKDIR /var/www/html
 
 # ── Copy application code ─────────────────────────────────
 # Build context is project root (docker-compose context: .)
-COPY backend/api/       ./api/
-COPY backend/config/    ./config/
-COPY backend/utils/     ./utils/
-COPY backend/database.sql     ./database.sql
+COPY backend/api/            ./api/
+COPY backend/config/         ./config/
+COPY backend/utils/          ./utils/
 COPY backend/init.php         ./init.php
 COPY backend/update-schema.php ./update-schema.php
-COPY portals/           ./portals/
-COPY dummy-portal/      ./dummy-portal/
+COPY portals/                ./portals/
+COPY dummy-portal/           ./dummy-portal/
+# NOTE: database/init.sql is NOT copied here — it is mounted directly into
+# the MySQL container via docker-compose volumes (docker-entrypoint-initdb.d).
+# The backend uses update-schema.php (called by docker-entrypoint.sh) instead.
 
 # ── Directory structure for file storage ──────────────────
 RUN mkdir -p \

@@ -3,12 +3,16 @@
 // SCHEMA UPDATER — Run once after upgrading the project
 // Visit: http://localhost/mini-automation/backend/update-schema.php
 // Safely adds new columns, tables, and seed data.
+//
+// Credentials are read from environment variables (set in .env
+// or passed by docker-compose). Falls back to XAMPP defaults.
 // ============================================================
 
-$host   = 'localhost';
-$dbUser = 'root';
-$dbPass = '';
-$dbName = 'barcode_portal';
+$host   = getenv('DB_HOST')     ?: 'localhost';
+$dbUser = getenv('DB_USER')     ?: 'root';
+$dbPass = getenv('DB_PASSWORD') ?: '';
+$dbName = getenv('DB_NAME')     ?: 'barcode_portal';
+$dbPort = getenv('DB_PORT')     ?: '3306';
 
 $log = [];
 
@@ -23,7 +27,7 @@ function run($pdo, $sql, $desc) {
 }
 
 try {
-    $pdo = new PDO("mysql:host={$host};dbname={$dbName};charset=utf8mb4", $dbUser, $dbPass, [
+    $pdo = new PDO("mysql:host={$host};port={$dbPort};dbname={$dbName};charset=utf8mb4", $dbUser, $dbPass, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ]);
