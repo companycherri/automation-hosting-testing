@@ -1,70 +1,88 @@
 # ============================================================
-# .dockerignore — exclude files from Docker build context
+# .dockerignore — root build context exclusions
+#
+# This file applies when build context is "." (project root).
+# Currently that means: backend service only.
+#
+# frontend context = ./frontend → reads frontend/.dockerignore
+# bot context      = ./bot     → reads bot/.dockerignore
 # ============================================================
 
-# Git
-.git
+# ── Git ────────────────────────────────────────────────────
+.git/
 .gitignore
 .gitattributes
 
-# Node
-node_modules
-frontend/node_modules
+# ── Node / React ───────────────────────────────────────────
+node_modules/
+frontend/node_modules/
 npm-debug.log*
-yarn-error.log
+yarn-error.log*
+yarn-debug.log*
 
-# React dev artifacts
-frontend/build
+# ── React build/dev artifacts ──────────────────────────────
+frontend/build/
 frontend/.env.local
 frontend/.env.development.local
 frontend/.env.test.local
 frontend/.env.production.local
 
-# Python
-__pycache__
-*.pyc
+# ── Python (bot not in backend context, but guard anyway) ──
+__pycache__/
+*.py[cod]
 *.pyo
 *.pyd
 .Python
-bot/.venv
-bot/venv
-bot/env
-bot/*.log
+bot/venv/
+bot/.venv/
+bot/env/
+bot/ENV/
 bot/logs/
 bot/screenshots/
 bot/downloads/
 bot/temp/
+bot/.pytest_cache/
+bot/.mypy_cache/
 
-# IDE
-.vscode
-.idea
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Docker
-docker-compose.override.yml
-
-# Env files (never build secrets into images)
+# ── Environment / secrets ──────────────────────────────────
 .env
 .env.*
 !.env.example
 
-# Test/sample data
-samples/
-*.test.js
+# ── IDE / OS ───────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini
 
-# XAMPP / local dev
-portals/company-a/sessions/
-portals/company-b/sessions/
-portals/company-c/sessions/
-dummy-portal/sessions/
+# ── Docker override ────────────────────────────────────────
+docker-compose.override.yml
+
+# ── Runtime data / user uploads ────────────────────────────
 backend/uploads/
 backend/downloads/
+portals/*/sessions/
+dummy-portal/sessions/
+portals/*/generated/
+dummy-portal/generated/
 
-# Docs (not needed in image)
+# ── SSL private keys ───────────────────────────────────────
+nginx/ssl/*.pem
+nginx/ssl/*.crt
+nginx/ssl/*.key
+nginx/ssl/*.p12
+
+# ── Logs ───────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Docs (not needed in images) ────────────────────────────
 *.md
 docs/
+
+# ── Test / sample data ─────────────────────────────────────
+samples/
+*.test.js

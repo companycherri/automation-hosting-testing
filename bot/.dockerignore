@@ -1,0 +1,65 @@
+# ============================================================
+# bot/.dockerignore
+#
+# CRITICAL: bot build context is ./bot (not project root).
+# Docker reads THIS file, NOT the root .dockerignore.
+# Without this file, bot/venv/ (~70MB of Windows packages)
+# is sent to Docker every build → causes the "load build
+# context: 71.91MB" hang.
+# ============================================================
+
+# ── Windows virtual environment (NEVER send to Linux Docker) ──
+venv/
+.venv/
+env/
+ENV/
+*.egg-info/
+
+# ── Python cache ───────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+dist/
+build/
+
+# ── Test/type cache ────────────────────────────────────────
+.pytest_cache/
+.mypy_cache/
+.tox/
+.coverage
+htmlcov/
+
+# ── Runtime output — mounted as Docker volumes at runtime ──
+logs/
+screenshots/
+downloads/
+temp/
+
+# ── Windows-only setup scripts — useless in Linux container ─
+setup.bat
+setup.ps1
+
+# ── IDE / OS ───────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ── Git ────────────────────────────────────────────────────
+.git/
+.gitignore
+.gitattributes
+
+# ── Docs (not needed in image) ────────────────────────────
+*.md
+
+# ── Env files (secrets must never be baked into images) ───
+.env
+.env.*
+!.env.example

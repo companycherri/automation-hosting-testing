@@ -1,39 +1,20 @@
 # ============================================================
 # Bot Dockerfile — Python 3.11 + Playwright + Chromium
-# Runs headless browser automation continuously
+# Runs headless browser automation continuously.
+#
+# Layer order is optimised for Docker cache:
+#   1. Base image + minimal system tools
+#   2. requirements.txt → pip install          ← cached unless requirements change
+#   3. Playwright browser + OS deps download   ← cached unless playwright version changes
+#   4. COPY source files                       ← cache busts only on code changes
 # ============================================================
 
 FROM --platform=linux/amd64 python:3.11-slim
 
-# ── Playwright/Chromium system dependencies ────────────────
+# ── Minimal tools needed before pip / playwright ──────────
+# wget + ca-certificates are required for downloading Chromium.
+# curl is used by the healthcheck.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        # Chromium core libraries
-        libnss3 \
-        libnspr4 \
-        libatk1.0-0 \
-        libatk-bridge2.0-0 \
-        libcups2 \
-        libdrm2 \
-        libdbus-1-3 \
-        libxcb1 \
-        libxkbcommon0 \
-        libx11-6 \
-        libxcomposite1 \
-        libxdamage1 \
-        libxext6 \
-        libxfixes3 \
-        libxrandr2 \
-        libgbm1 \
-        libpango-1.0-0 \
-        libcairo2 \
-        libasound2 \
-        libatspi2.0-0 \
-        libglib2.0-0 \
-        # Font rendering
-        fontconfig \
-        fonts-liberation \
-        fonts-noto-color-emoji \
-        # File handling
         wget \
         curl \
         ca-certificates \
@@ -42,22 +23,34 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 # ── Python dependencies ────────────────────────────────────
+# Copy requirements FIRST so this layer is cached separately
+# from source code. Pip + Playwright only re-install when
+# requirements.txt changes.
 COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
-# ── Install Playwright browsers (as root, before user switch)
-# Store browsers in a predictable location accessible to all users
+# ── Playwright browser + all OS dependencies ───────────────
+# Store browsers in a fixed path accessible to all users.
+# "playwright install-deps chromium" uses apt to install every
+# system library Chromium needs (fonts, glib, nss, etc.) —
+# more reliable than maintaining a manual apt list.
 ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 
-RUN playwright install chromium \
+RUN apt-get update \
+    && playwright install chromium \
     && playwright install-deps chromium \
-    && chmod -R 777 /ms-playwright
+    && rm -rf /var/lib/apt/lists/* \
+    && chmod -R 755 /ms-playwright
 
 # ── Copy bot source ────────────────────────────────────────
+# This is intentionally LAST — source changes are frequent.
+# The heavy layers above (pip, Chromium) stay cached.
+# bot/.dockerignore ensures venv/, __pycache__/, logs/,
+# screenshots/, downloads/ are NOT sent in the build context.
 COPY . .
 
-# ── Runtime directories (will be overridden by volumes) ───
+# ── Runtime directories (overridden by Docker volumes) ─────
 RUN mkdir -p screenshots downloads logs temp
 
 # ── Non-root user for security ────────────────────────────
@@ -66,8 +59,8 @@ RUN groupadd -r botuser && useradd -r -g botuser -u 1001 botuser \
 
 USER botuser
 
-# ── Health / meta ──────────────────────────────────────────
-HEALTHCHECK --interval=60s --timeout=15s --start-period=30s --retries=3 \
+# ── Health check ───────────────────────────────────────────
+HEALTHCHECK --interval=60s --timeout=15s --start-period=60s --retries=3 \
   CMD python -c "import requests; requests.get('http://nginx/api/jobs.php', timeout=5)" || exit 1
 
 CMD ["python", "-u", "bot.py"]

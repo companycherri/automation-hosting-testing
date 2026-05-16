@@ -1,2 +1,8 @@
-playwright
-requests
+# ── Bot Python dependencies ────────────────────────────────
+# Pinned to exact versions so Docker layer cache is stable.
+# If requirements.txt doesn't change, Docker reuses the
+# cached layer — Playwright + Chromium are NOT re-downloaded.
+#
+# To upgrade: change the version here, then rebuild.
+playwright==1.49.0
+requests==2.32.3
