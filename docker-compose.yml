@@ -95,8 +95,8 @@ services:
   python-bot:
     platform: linux/amd64
     build:
-      context: ./bot
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: bot/Dockerfile
     container_name: barcode_bot
     restart: unless-stopped
     env_file:

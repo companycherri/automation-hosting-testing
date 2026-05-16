@@ -26,7 +26,8 @@ WORKDIR /app
 # Copy requirements FIRST so this layer is cached separately
 # from source code. Pip + Playwright only re-install when
 # requirements.txt changes.
-COPY requirements.txt .
+# NOTE: context is project root (.) so all paths are prefixed bot/
+COPY bot/requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
@@ -46,9 +47,9 @@ RUN apt-get update \
 # ── Copy bot source ────────────────────────────────────────
 # This is intentionally LAST — source changes are frequent.
 # The heavy layers above (pip, Chromium) stay cached.
-# bot/.dockerignore ensures venv/, __pycache__/, logs/,
-# screenshots/, downloads/ are NOT sent in the build context.
-COPY . .
+# Root .dockerignore ensures bot/venv/, bot/__pycache__/,
+# bot/logs/, bot/screenshots/, bot/downloads/ are excluded.
+COPY bot/ ./
 
 # ── Runtime directories (overridden by Docker volumes) ─────
 RUN mkdir -p screenshots downloads logs temp
