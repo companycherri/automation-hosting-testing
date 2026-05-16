@@ -3,7 +3,7 @@
 # Serves: /api/ · /portals/ · /uploads/ · /bot/
 # ============================================================
 
-FROM php:8.2-apache
+FROM --platform=linux/amd64 php:8.2-apache
 
 # ── System dependencies ────────────────────────────────────
 RUN apt-get update && apt-get install -y --no-install-recommends \

@@ -5,7 +5,7 @@
 # ============================================================
 
 # ── Stage 1: Build ────────────────────────────────────────────
-FROM node:20-alpine AS builder
+FROM --platform=linux/amd64 node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -25,7 +25,7 @@ COPY . .
 RUN npm run build
 
 # ── Stage 2: Serve ────────────────────────────────────────────
-FROM nginx:1.25-alpine
+FROM --platform=linux/amd64 nginx:1.25-alpine
 
 # Remove default nginx config
 RUN rm /etc/nginx/conf.d/default.conf

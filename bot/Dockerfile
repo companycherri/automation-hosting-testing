@@ -3,7 +3,7 @@
 # Runs headless browser automation continuously
 # ============================================================
 
-FROM python:3.11-slim
+FROM --platform=linux/amd64 python:3.11-slim
 
 # ── Playwright/Chromium system dependencies ────────────────
 RUN apt-get update && apt-get install -y --no-install-recommends \
